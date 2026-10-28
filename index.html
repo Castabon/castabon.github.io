@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Christian D. Castaño Bonilla</title>
+<meta name="description" content="Christian D. Castaño Bonilla, researcher in economics and political economy at the World Bank.">
+<meta name="author" content="Christian D. Castaño Bonilla">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout idea: one narrow white column, small round photo beside the name, short bio, then a plain paper list. Single light theme, as on most economists' sites. */
+  --bg: #ffffff;
+  --text: #222222;
+  --muted: #666666;
+  --line: #e5e5e5;
+  --link: #1a4f8b;
+  --font: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 18px;
+  line-height: 1.6;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+
+/* Language switching: show only the active language */
+html[lang="en"] [lang="es"], html[lang="es"] [lang="en"] { display: none !important; }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
+
+.langbar { display: flex; justify-content: flex-end; gap: 4px; font-size: 15px; margin-bottom: 24px; }
+.langbar button {
+  font: inherit; background: none; border: 0; padding: 2px 6px; cursor: pointer;
+  color: var(--link);
+}
+.langbar button[aria-pressed="true"] { color: var(--text); font-weight: 600; cursor: default; }
+.langbar span { color: var(--muted); }
+
+.top { display: flex; gap: 24px; align-items: center; margin-bottom: 20px; }
+.photo {
+  width: 120px; height: 120px; flex: 0 0 auto;
+  border-radius: 50%;
+  background: #eef1f5;
+  color: #8a94a6;
+  display: grid; place-items: center;
+  font-size: 30px; letter-spacing: 0.04em;
+  overflow: hidden;
+}
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 480px) { .photo { width: 88px; height: 88px; font-size: 22px; } .top { gap: 16px; } }
+
+h1 { font-size: 34px; font-weight: 600; line-height: 1.2; margin: 0 0 4px; }
+@media (max-width: 480px) { h1 { font-size: 27px; } }
+.position { color: var(--muted); margin: 0; }
+.position span { display: block; }
+.contact { margin: 16px 0 0; font-size: 16px; }
+.contact a + a::before { content: "·"; color: var(--muted); padding: 0 8px; display: inline-block; }
+p { margin: 0 0 14px; }
+
+h2 {
+  font-size: 22px; font-weight: 600;
+  margin: 48px 0 8px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+h3 { font-size: 16px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; margin: 28px 0 4px; }
+
+.papers { list-style: none; margin: 0; padding: 0; }
+.papers li { padding: 12px 0; }
+.title { font-weight: 600; }
+.coauth, .venue { display: block; color: var(--muted); font-size: 16.5px; }
+.venue { font-style: italic; }
+
+.plain { margin: 0; padding-left: 20px; }
+.plain li { margin: 6px 0; }
+
+footer { margin-top: 56px; font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="langbar" role="group" aria-label="Language / Idioma">
+    <button type="button" id="btn-en" data-set-lang="en" aria-pressed="true">English</button>
+    <span aria-hidden="true">|</span>
+    <button type="button" id="btn-es" data-set-lang="es" aria-pressed="false">Español</button>
+  </div>
+
+  <div class="top">
+    <!-- Your photo: save a square picture as headshot.jpg next to this file. Until then the initials show. -->
+    <div class="photo">
+      <img src="headshot.jpg" alt="Christian D. Castaño Bonilla" onerror="this.remove()">
+      <span aria-hidden="true">CCB</span>
+    </div>
+    <div>
+      <h1>Christian D. Castaño Bonilla</h1>
+      <p class="position" lang="en">
+        <span>Research Analyst, Development Impact Group</span>
+        <span>Research Coordinator, Africa Gender Innovation Lab</span>
+        <span>The World Bank</span>
+      </p>
+      <p class="position" lang="es">
+        <span>Analista de Investigación, Grupo de Impacto en el Desarrollo</span>
+        <span>Coordinador de Investigación, Laboratorio de Innovación de Género para África</span>
+        <span>Banco Mundial</span>
+      </p>
+    </div>
+  </div>
+
+  <div lang="en">
+    <p>I am a researcher working on public economics, political economy and development. I am interested in corruption and state capacity, taxation, and how survey measurement shapes what we learn about gender and agency.</p>
+    <p>At the World Bank I work on the MAGNET initiative of the <a href="https://www.worldbank.org/en/programs/africa-gender-innovation-lab">Africa Gender Innovation Lab</a>, which develops tools to measure women’s empowerment, and I build global datasets of non-tariff measures from legal texts. Before that I was a research assistant in development economics at the <a href="https://www.ub.edu/">Universitat de Barcelona</a> and a research fellow at the Regional Academy on the United Nations, working with UNODC.</p>
+    <p>I hold an MS in Institutions and Political Economy from the Universitat de Barcelona, an MPP from Universidad Icesi and a BBA from the University of Iowa.</p>
+  </div>
+  <div lang="es">
+    <p>Soy investigador en economía pública, economía política y desarrollo. Me interesan la corrupción y la capacidad estatal, la tributación y la forma en que la medición en encuestas influye en lo que aprendemos sobre género y agencia.</p>
+    <p>En el Banco Mundial trabajo en la iniciativa MAGNET del <a href="https://www.worldbank.org/en/programs/africa-gender-innovation-lab">Laboratorio de Innovación de Género para África</a>, que desarrolla herramientas para medir el empoderamiento de las mujeres, y construyo bases de datos globales de medidas no arancelarias a partir de textos legales. Antes fui asistente de investigación en economía del desarrollo en la <a href="https://www.ub.edu/">Universitat de Barcelona</a> e investigador en la Academia Regional de las Naciones Unidas, en colaboración con la UNODC.</p>
+    <p>Tengo una maestría en Instituciones y Economía Política de la Universitat de Barcelona, una maestría en Gobierno y Políticas Públicas de la Universidad Icesi y un pregrado en Administración de Empresas de la University of Iowa.</p>
+  </div>
+
+  <p class="contact">
+    <a href="cv.pdf">CV</a><a href="https://scholar.google.com/citations?user=UDIH8EgAAAAJ&amp;hl=en">Google Scholar</a><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4546308">SSRN</a><a href="https://www.linkedin.com/in/cdcastano">LinkedIn</a><a href="mailto:ccastanobonilla@worldbank.org">ccastanobonilla@worldbank.org</a>
+  </p>
+
+  <h2><span lang="en">Research</span><span lang="es">Investigación</span></h2>
+
+  <h3><span lang="en">Working Papers</span><span lang="es">Documentos de trabajo</span></h3>
+  <ul class="papers">
+    <li>
+      <span class="title">The Role of Enumerators’ Views on Gender in Shaping Respondents’ Answers</span>
+      <span class="coauth"><span lang="en">with</span><span lang="es">con</span> C. Doss <span lang="en">and</span><span lang="es">y</span> María Hernández-de-Benito</span>
+    </li>
+    <li>
+      <span class="title">Measuring Implicit Bias Toward Gender-Incongruent Occupations in Uganda and India</span>
+      <span class="coauth"><span lang="en">with</span><span lang="es">con</span> Aletheia Donald, M. Jain <span lang="en">and</span><span lang="es">y</span> A. Raj</span>
+    </li>
+    <li>
+      <a class="title" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4546308">Transparency and Governance in Drug Treatment Systems: A Comparative Framework</a>
+      <span class="coauth"><span lang="en">with</span><span lang="es">con</span> A. Cervantes Nieto</span>
+      <span class="venue"><span lang="en">SSRN Working Paper 4546308</span><span lang="es">Documento de trabajo SSRN 4546308</span></span>
+    </li>
+  </ul>
+
+  <h3><span lang="en">Other Writing</span><span lang="es">Otros escritos</span></h3>
+  <ul class="papers">
+    <li>
+      <span class="title">Exploring the Link Between Corruption and State Capacity: A Case Study of Brazilian Municipalities</span>
+      <span class="venue"><span lang="en">MS thesis, Universitat de Barcelona, 2023</span><span lang="es">Tesis de maestría, Universitat de Barcelona, 2023</span></span>
+    </li>
+    <li>
+      <span class="title">Corruption in Drug Treatment Systems: Innovation Against Corrupt Practices</span>
+      <span class="coauth"><span lang="en">with</span><span lang="es">con</span> A. Cervantes Nieto</span>
+      <span class="venue"><span lang="en">Regional Academy on the United Nations, 2023</span><span lang="es">Academia Regional de las Naciones Unidas, 2023</span></span>
+    </li>
+  </ul>
+
+  <h3><span lang="en">Presentations</span><span lang="es">Presentaciones</span></h3>
+  <ul class="plain">
+    <li>London School of Economics, INET Corruption and Conflicts of Interest in Healthcare, 2024</li>
+    <li>Universitat de Barcelona, Interdisciplinary Corruption Research Forum, 2023</li>
+    <li lang="en">United Nations, Vienna International Centre, Regional Academy on the United Nations, 2023</li>
+    <li lang="es">Naciones Unidas, Centro Internacional de Viena, Academia Regional de las Naciones Unidas, 2023</li>
+  </ul>
+
+  <footer>
+    <span lang="en">Views expressed here are my own and do not represent the World Bank.</span>
+    <span lang="es">Las opiniones expresadas aquí son personales y no representan al Banco Mundial.</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  function setLang(lang, remember) {
+    root.lang = lang;
+    document.title = "Christian D. Castaño Bonilla";
+    document.getElementById("btn-en").setAttribute("aria-pressed", lang === "en");
+    document.getElementById("btn-es").setAttribute("aria-pressed", lang === "es");
+    if (remember) { try { localStorage.setItem("lang", lang); } catch (e) {} }
+    if (remember) { try { history.replaceState(null, "", lang === "es" ? "#es" : location.pathname); } catch (e) {} }
+  }
+  // Start language: #es in the link, then the visitor's last choice, then English
+  var start = "en";
+  if (location.hash === "#es") { start = "es"; }
+  else { try { if (localStorage.getItem("lang") === "es") start = "es"; } catch (e) {} }
+  setLang(start, false);
+  document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+    b.addEventListener("click", function () { setLang(b.getAttribute("data-set-lang"), true); });
+  });
+  window.addEventListener("hashchange", function () { setLang(location.hash === "#es" ? "es" : "en", false); });
+})();
+</script>
+</body>
+</html>
