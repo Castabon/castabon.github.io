@@ -1,0 +1,36 @@
+name: Check links
+
+on:
+  schedule:
+    - cron: "0 13 * * 1"   # every Monday, 8:00 in Bogotá
+  push:
+    branches: [main]       # also whenever you edit the site
+  workflow_dispatch:        # lets you run it by hand
+
+permissions:
+  issues: write
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check every link
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --max-retries 3
+            --accept 200,206,429,999
+            index.html
+          fail: false
+
+      - name: Open an issue if any links are broken
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Broken links found on castanobonilla.com
+          content-filepath: ./lychee/out.md
+          labels: broken-links
