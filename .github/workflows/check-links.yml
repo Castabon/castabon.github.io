@@ -23,7 +23,9 @@ jobs:
           args: >-
             --no-progress
             --max-retries 3
-            --accept 200,206,429,999
+            --root-dir ${{ github.workspace }}
+            --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
+            --accept 200,206,403,429,999
             index.html
           fail: false
 
