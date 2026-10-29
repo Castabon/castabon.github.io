@@ -46,18 +46,22 @@ html[lang="en"] [lang="es"], html[lang="es"] [lang="en"] { display: none !import
 .langbar button[aria-pressed="true"] { color: var(--text); font-weight: 600; cursor: default; }
 .langbar span { color: var(--muted); }
 
-.top { display: flex; gap: 24px; align-items: center; margin-bottom: 20px; }
+.top { display: flex; gap: 28px; align-items: center; margin-bottom: 24px; }
 .photo {
-  width: 120px; height: 120px; flex: 0 0 auto;
-  border-radius: 50%;
+  width: 180px; height: 220px; flex: 0 0 auto;
+  border-radius: 12px;
   background: #eef1f5;
   color: #8a94a6;
   display: grid; place-items: center;
   font-size: 30px; letter-spacing: 0.04em;
   overflow: hidden;
 }
-.photo img { width: 100%; height: 100%; object-fit: cover; }
-@media (max-width: 480px) { .photo { width: 88px; height: 88px; font-size: 22px; } .top { gap: 16px; } }
+.photo { position: relative; }
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+@media (max-width: 600px) {
+  .top { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .photo { width: 100%; max-width: 320px; height: auto; aspect-ratio: 4 / 5; }
+}
 
 h1 { font-size: 34px; font-weight: 600; line-height: 1.2; margin: 0 0 4px; }
 @media (max-width: 480px) { h1 { font-size: 27px; } }
