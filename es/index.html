@@ -133,9 +133,9 @@ h3 { font-size: 16px; font-weight: 600; color: var(--muted); text-transform: upp
   
 /* News: date column + one-line items; older items fold away */
 .news { list-style: none; margin: 0; padding: 0; }
-.news li { display: grid; grid-template-columns: 84px 1fr; gap: 16px; padding: 7px 0; }
-.news .date { color: var(--muted); font-size: 16px; padding-top: 1px; white-space: nowrap; }
-@media (max-width: 480px) { .news li { grid-template-columns: 1fr; gap: 0; } }
+.news li { position: relative; padding: 7px 0 7px 100px; }
+.news .date { position: absolute; left: 0; top: 8px; color: var(--muted); font-size: 16px; white-space: nowrap; }
+@media (max-width: 480px) { .news li { padding-left: 0; } .news .date { position: static; display: block; } }
 .more summary { cursor: pointer; color: var(--link); font-size: 16px; padding: 8px 0; list-style-position: inside; }
 .more summary:hover { text-decoration: underline; }
 .map { display: block; width: 100%; max-width: 560px; height: auto; margin: 4px 0 18px; }
