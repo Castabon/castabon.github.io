@@ -153,7 +153,8 @@ footer { margin-top: 56px; font-size: 14px; color: var(--muted); }
 h2, h3, .top { scroll-margin-top: 24px; }
 
 /* ---------- Skills ---------- */
-.tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 12px 0 8px; padding: 0; list-style: none; }
+.tools { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 12px 0 8px; padding: 0; list-style: none; } 
+@media (max-width: 560px) { .tools { grid-template-columns: 1fr; } }
 .tool { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; background: #fbfcfd; }
 .tool .tname { display: flex; align-items: center; gap: 10px; font-weight: 600; }
 .tool .badge { width: 30px; height: 30px; border-radius: 7px; display: grid; place-items: center; background: var(--link); color: #fff; font-size: 13px; font-weight: 600; letter-spacing: .02em; flex: 0 0 auto; }
@@ -284,7 +285,7 @@ With Alejandra Cervantes Nieto, I <a href="https://www.linkedin.com/posts/cdcast
 <span class="venue">Regional Academy on the United Nations, 2023</span>
 </li>
 </ul>
-<h3>Presentations</h3>
+<h3 id="presentations">Presentations</h3>
 <ul class="plain">
 <li>London School of Economics, INET Corruption and Conflicts of Interest in Healthcare, 2024</li>
 <li>Universitat de Barcelona, Interdisciplinary Corruption Research Forum, 2023</li>
@@ -297,42 +298,17 @@ With Alejandra Cervantes Nieto, I <a href="https://www.linkedin.com/posts/cdcast
     <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">St</span><span>Stata<span class="kind">Statistics</span></span></span><p>Psychometric validation of women’s empowerment scales; quality checks on survey and lab-in-the-field data.</p></li>
     <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">R</span><span>R<span class="kind">Statistics &amp; data</span></span></span><p>Reproducible pipelines for a trade panel with 470M+ observations; charts for the World Development Report.</p></li>
     <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">Rmd</span><span>R Markdown<span class="kind">Reproducible reports</span></span></span><p>Country case studies and technical documentation that rebuild from code.</p></li>
+    <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">GIS</span><span>GIS<span class="kind">Spatial data</span></span></span><p>Mapping and spatial analysis in R and GeoDa.</p></li>
     <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">SS</span><span>Survey Solutions<span class="kind">CAPI surveys</span></span></span><p>Household surveys programmed for fieldwork in sub-Saharan Africa and Asia.</p></li>
     <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">CTO</span><span>SurveyCTO<span class="kind">CAPI surveys</span></span></span><p>Survey programming and frequency checks to monitor data quality in the field.</p></li>
     <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">NLP</span><span>Text as data<span class="kind">NLP</span></span></span><p>Datasets of non-tariff measures built from legal texts; cross-country analysis of drug-policy legislation.</p></li>
     <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">ML</span><span>Machine learning<span class="kind">Causal inference</span></span></span><p>Causal forests to estimate heterogeneous treatment effects in randomized trials.</p></li>
 </ul>
-<h3>In practice</h3>
-<div class="code">
-  <div class="tabs" role="tablist" aria-label="Code examples">
-    <button type="button" role="tab" id="tab-stata" aria-controls="pane-stata" aria-selected="true">Stata</button>
-    <button type="button" role="tab" id="tab-r" aria-controls="pane-r" aria-selected="false">R</button>
-    <button type="button" role="tab" id="tab-rmd" aria-controls="pane-rmd" aria-selected="false">R Markdown</button>
-  </div>
-  <div role="tabpanel" id="pane-stata" aria-labelledby="tab-stata"><pre><span class="c">* Does the agency scale measure one construct?</span>
-<span class="k">alpha</span> agency_q1-agency_q8, item std
-<span class="k">factor</span> agency_q1-agency_q8, pcf
-
-<span class="c">* Treatment effect with village fixed effects</span>
-<span class="k">reghdfe</span> empowerment treated, absorb(village) vce(cluster village)</pre><span class="cap">Checking whether an agency scale measures one thing, then estimating a treatment effect.</span></div>
-  <div role="tabpanel" id="pane-r" aria-labelledby="tab-r" hidden><pre><span class="k">library</span>(data.table)
-
-ntm &lt;- <span class="k">fread</span>(<span class="s">"ntm_panel.csv"</span>)
-shares &lt;- ntm[, .(share_affected = <span class="k">mean</span>(any_ntm)),
-              by = .(reporter, year)]</pre><span class="cap">Collapsing a trade panel to the share of observations affected by non-tariff measures.</span></div>
-  <div role="tabpanel" id="pane-rmd" aria-labelledby="tab-rmd" hidden><pre>---
-title: <span class="s">"Case Study: Australia"</span>
-output:
-  html_document:
-    toc: <span class="k">true</span>
-    toc_float: <span class="k">true</span>
-    code_folding: hide
----</pre><span class="cap">The header behind a country case study, with the same floating table of contents as this page.</span></div>
 </div>
 <h3>Languages</h3>
 <ul class="langs">
-    <li><strong>Spanish</strong><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="lvl">Native</span><span class="hi" lang="es">Hola</span></li>
     <li><strong>English</strong><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="lvl">Native</span><span class="hi" lang="en">Hello</span></li>
+    <li><strong>Spanish</strong><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="lvl">Native</span><span class="hi" lang="es">Hola</span></li>
     <li><strong>Italian</strong><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="lvl">Intermediate</span><span class="hi" lang="it">Ciao</span></li>
     <li><strong>French</strong><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><span class="lvl">Basic</span><span class="hi" lang="fr">Bonjour</span></li>
 </ul>
