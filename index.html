@@ -141,12 +141,49 @@ h3 { font-size: 16px; font-weight: 600; color: var(--muted); text-transform: upp
 .more summary:hover { text-decoration: underline; }
 .map { display: block; width: 100%; max-width: 560px; height: auto; margin: 4px 0 18px; }
 footer { margin-top: 56px; font-size: 14px; color: var(--muted); }
+/* ---------- Layout with a floating table of contents (like R Markdown's toc_float) ---------- */
+.layout { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 220px minmax(0, 760px); gap: 48px; padding: 0 20px; justify-content: center; }
+.layout .wrap { max-width: none; margin: 0; padding: 32px 0 80px; }
+.toc { position: sticky; top: 32px; align-self: start; margin-top: 76px; border: 1px solid #d8dde4; border-radius: 6px; overflow: hidden; font-size: 15px; }
+.toc a { display: block; padding: 7px 14px; color: #333; text-decoration: none; line-height: 1.35; }
+.toc a.sub { padding-left: 28px; font-size: 14px; color: #555; }
+.toc a:hover { background: #eef3f9; text-decoration: none; }
+.toc a.active { background: var(--link); color: #fff; }
+@media (max-width: 960px) { .layout { display: block; } .toc { display: none; } .layout .wrap { padding: 32px 0 80px; } }
+h2, h3, .top { scroll-margin-top: 24px; }
+
+/* ---------- Skills ---------- */
+.tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin: 12px 0 8px; padding: 0; list-style: none; }
+.tool { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; background: #fbfcfd; }
+.tool .tname { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+.tool .badge { width: 30px; height: 30px; border-radius: 7px; display: grid; place-items: center; background: var(--link); color: #fff; font-size: 13px; font-weight: 600; letter-spacing: .02em; flex: 0 0 auto; }
+.tool .kind { display: block; font-size: 13px; color: var(--muted); font-weight: 400; }
+.tool p { margin: 8px 0 0; font-size: 15px; line-height: 1.45; color: #444; }
+
+.code { margin: 20px 0 8px; border: 1px solid #d8dde4; border-radius: 8px; overflow: hidden; background: #1e2430; }
+.code .tabs { display: flex; gap: 2px; background: #151a23; padding: 6px 6px 0; }
+.code .tabs button { font: inherit; font-size: 14px; border: 0; padding: 6px 14px; border-radius: 6px 6px 0 0; background: transparent; color: #9aa6b8; cursor: pointer; }
+.code .tabs button[aria-selected="true"] { background: #1e2430; color: #fff; }
+.code pre { margin: 0; padding: 14px 16px; overflow-x: auto; font: 14px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #dfe6f0; }
+.code .c { color: #7f8ca3; } .code .k { color: #8fb8ff; } .code .s { color: #b5dba0; }
+.code .cap { display: block; padding: 0 16px 12px; font-size: 13px; color: #9aa6b8; }
+
+.langs { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 10px; }
+.langs li { display: grid; grid-template-columns: 90px 110px 120px 1fr; align-items: center; gap: 14px; }
+.langs .dots { display: flex; gap: 5px; }
+.langs .dots i { width: 14px; height: 14px; border-radius: 50%; background: #e3e8ef; }
+.langs .dots i.on { background: var(--link); }
+.langs .lvl { font-size: 15px; color: var(--muted); }
+.langs .hi { font-style: italic; color: #444; }
+@media (max-width: 480px) { .langs li { grid-template-columns: 80px 100px 1fr; gap: 10px; } .langs .hi { display: none; } }
 </style>
 </head>
 <body>
+<div class="layout">
+<nav class="toc" aria-label="Contents"><a href="#about">About</a><a href="#news">News</a><a href="#research">Research</a><a href="#working-papers" class="sub">Working papers</a><a href="#other-writing" class="sub">Other writing</a><a href="#presentations" class="sub">Presentations</a><a href="#skills">Skills</a></nav>
 <div class="wrap">
 <nav aria-label="Language / Idioma" class="langbar"><strong>English</strong><span aria-hidden="true">|</span><a href="/es/" hreflang="es" lang="es">Español</a></nav>
-<div class="top">
+<div class="top" id="about">
 <div class="photo">
 <img alt="Christian D. Castaño-Bonilla" onerror="this.remove()" src="headshot.jpeg"/>
 <span aria-hidden="true">CCB</span>
@@ -172,7 +209,7 @@ footer { margin-top: 56px; font-size: 14px; color: var(--muted); }
 </div>
 
 <img alt="World map marking Cali, Wageningen, Yokohama, Bangkok, Rome, Seattle, Iowa City and Barcelona" class="map" height="330" src="map.svg" width="720"/>
-<h2>News</h2>
+<h2 id="news">News</h2>
 <ul class="news">
 <li>
 <span class="date">Sep 2026</span>
@@ -210,8 +247,8 @@ With Alejandra Cervantes Nieto, I <a href="https://www.linkedin.com/posts/cdcast
 </li>
 </ul>
 </details>
-<h2>Research</h2>
-<h3>Working Papers</h3>
+<h2 id="research">Research</h2>
+<h3 id="working-papers">Working Papers</h3>
 <ul class="papers">
 <li>
 <span class="title">Beyond Tariffs: Evidence from the Global Panel of Non-Tariff Measures</span>
@@ -231,7 +268,7 @@ With Alejandra Cervantes Nieto, I <a href="https://www.linkedin.com/posts/cdcast
 <span class="venue">SSRN Working Paper 4546308</span>
 </li>
 </ul>
-<h3>Other Writing</h3>
+<h3 id="other-writing">Other Writing</h3>
 <ul class="papers">
 <li>
 <span class="title">Casos de éxito de iniciativas anticorrupción: un balance y lecciones para el caso colombiano</span>
@@ -254,11 +291,83 @@ With Alejandra Cervantes Nieto, I <a href="https://www.linkedin.com/posts/cdcast
 <li>United Nations, Vienna International Centre, Regional Academy on the United Nations, 2023</li>
 
 </ul>
+<h2 id="skills">Skills</h2>
+<h3>Toolkit</h3>
+<ul class="tools">
+    <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">St</span><span>Stata<span class="kind">Statistics</span></span></span><p>Psychometric validation of women’s empowerment scales; quality checks on survey and lab-in-the-field data.</p></li>
+    <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">R</span><span>R<span class="kind">Statistics &amp; data</span></span></span><p>Reproducible pipelines for a trade panel with 470M+ observations; charts for the World Development Report.</p></li>
+    <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">Rmd</span><span>R Markdown<span class="kind">Reproducible reports</span></span></span><p>Country case studies and technical documentation that rebuild from code.</p></li>
+    <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">SS</span><span>Survey Solutions<span class="kind">CAPI surveys</span></span></span><p>Household surveys programmed for fieldwork in sub-Saharan Africa and Asia.</p></li>
+    <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">CTO</span><span>SurveyCTO<span class="kind">CAPI surveys</span></span></span><p>Survey programming and frequency checks to monitor data quality in the field.</p></li>
+    <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">NLP</span><span>Text as data<span class="kind">NLP</span></span></span><p>Datasets of non-tariff measures built from legal texts; cross-country analysis of drug-policy legislation.</p></li>
+    <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">ML</span><span>Machine learning<span class="kind">Causal inference</span></span></span><p>Causal forests to estimate heterogeneous treatment effects in randomized trials.</p></li>
+</ul>
+<h3>In practice</h3>
+<div class="code">
+  <div class="tabs" role="tablist" aria-label="Code examples">
+    <button type="button" role="tab" id="tab-stata" aria-controls="pane-stata" aria-selected="true">Stata</button>
+    <button type="button" role="tab" id="tab-r" aria-controls="pane-r" aria-selected="false">R</button>
+    <button type="button" role="tab" id="tab-rmd" aria-controls="pane-rmd" aria-selected="false">R Markdown</button>
+  </div>
+  <div role="tabpanel" id="pane-stata" aria-labelledby="tab-stata"><pre><span class="c">* Does the agency scale measure one construct?</span>
+<span class="k">alpha</span> agency_q1-agency_q8, item std
+<span class="k">factor</span> agency_q1-agency_q8, pcf
+
+<span class="c">* Treatment effect with village fixed effects</span>
+<span class="k">reghdfe</span> empowerment treated, absorb(village) vce(cluster village)</pre><span class="cap">Checking whether an agency scale measures one thing, then estimating a treatment effect.</span></div>
+  <div role="tabpanel" id="pane-r" aria-labelledby="tab-r" hidden><pre><span class="k">library</span>(data.table)
+
+ntm &lt;- <span class="k">fread</span>(<span class="s">"ntm_panel.csv"</span>)
+shares &lt;- ntm[, .(share_affected = <span class="k">mean</span>(any_ntm)),
+              by = .(reporter, year)]</pre><span class="cap">Collapsing a trade panel to the share of observations affected by non-tariff measures.</span></div>
+  <div role="tabpanel" id="pane-rmd" aria-labelledby="tab-rmd" hidden><pre>---
+title: <span class="s">"Case Study: Australia"</span>
+output:
+  html_document:
+    toc: <span class="k">true</span>
+    toc_float: <span class="k">true</span>
+    code_folding: hide
+---</pre><span class="cap">The header behind a country case study, with the same floating table of contents as this page.</span></div>
+</div>
+<h3>Languages</h3>
+<ul class="langs">
+    <li><strong>Spanish</strong><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="lvl">Native</span><span class="hi" lang="es">Hola</span></li>
+    <li><strong>English</strong><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="lvl">Native</span><span class="hi" lang="en">Hello</span></li>
+    <li><strong>Italian</strong><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="lvl">Intermediate</span><span class="hi" lang="it">Ciao</span></li>
+    <li><strong>French</strong><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><span class="lvl">Basic</span><span class="hi" lang="fr">Bonjour</span></li>
+</ul>
 <footer>
 Views expressed here are my own and do not represent the World Bank.
 
 </footer>
 </div>
+</div>
 <script>if (location.hash === "#es") { location.replace("/es/"); }</script>
+<script>
+(function () {
+  // Code tabs
+  var tabs = document.querySelectorAll('.code [role="tab"]');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', on);
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+    });
+  });
+  // Highlight the section you are reading in the table of contents
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+  var targets = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+  function update() {
+    var y = window.scrollY + 120, current = 0;
+    targets.forEach(function (el, i) { if (el && el.getBoundingClientRect().top + window.scrollY <= y) current = i; });
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) current = targets.length - 1;
+    links.forEach(function (a, i) { a.classList.toggle('active', i === current); });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+</script>
 </body>
 </html>
