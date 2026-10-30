@@ -1,17 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Christian D. Castaño-Bonilla | Political Economist</title>
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/favicon.png">
-<meta name="description" content="Christian D. Castaño-Bonilla is a researcher in development, political economy and public policy at the World Bank, working on state capacity, taxation, corruption and gender.">
-<link rel="canonical" href="https://castanobonilla.com/">
-<meta property="og:title" content="Christian D. Castaño-Bonilla | Political Economist">
-<meta property="og:description" content="Researcher in development, political economy and public policy at the World Bank.">
-<meta property="og:url" content="https://castanobonilla.com/">
-<meta property="og:type" content="profile">
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<link href="/favicon.png" rel="apple-touch-icon"/>
+<meta content="Christian D. Castaño-Bonilla is a researcher in development, political economy and public policy at the World Bank, working on state capacity, taxation, corruption and gender." name="description"/>
+<link href="https://castanobonilla.com/" rel="canonical"/>
+<link href="https://castanobonilla.com/" hreflang="en" rel="alternate"/>
+<link href="https://castanobonilla.com/es/" hreflang="es" rel="alternate"/>
+<link href="https://castanobonilla.com/" hreflang="x-default" rel="alternate"/>
+<meta content="Christian D. Castaño-Bonilla | Political Economist" property="og:title"/>
+<meta content="Researcher in development, political economy and public policy at the World Bank." property="og:description"/>
+<meta content="https://castanobonilla.com/" property="og:url"/>
+<meta content="profile" property="og:type"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -50,10 +54,10 @@
   "url": "https://castanobonilla.com/"
 }
 </script>
-<meta name="author" content="Christian D. Castaño-Bonilla">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<meta content="Christian D. Castaño-Bonilla" name="author"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
 <style>
 :root {
   /* Layout idea: one narrow white column, small round photo beside the name, short bio, then a plain paper list. Single light theme, as on most economists' sites. */
@@ -78,17 +82,11 @@ a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 
-/* Language switching: show only the active language */
-html[lang="en"] [lang="es"], html[lang="es"] [lang="en"] { display: none !important; }
-
 .wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
 
 .langbar { display: flex; justify-content: flex-end; gap: 4px; font-size: 15px; margin-bottom: 24px; }
-.langbar button {
-  font: inherit; background: none; border: 0; padding: 2px 6px; cursor: pointer;
-  color: var(--link);
-}
-.langbar button[aria-pressed="true"] { color: var(--text); font-weight: 600; cursor: default; }
+.langbar strong { font-weight: 600; color: var(--text); padding: 2px 6px; }
+.langbar a { padding: 2px 6px; }
 .langbar span { color: var(--muted); }
 
 .top { display: flex; gap: 28px; align-items: center; margin-bottom: 24px; }
@@ -145,166 +143,120 @@ footer { margin-top: 56px; font-size: 14px; color: var(--muted); }
 </head>
 <body>
 <div class="wrap">
+<nav aria-label="Language / Idioma" class="langbar"><strong>English</strong><span aria-hidden="true">|</span><a href="/es/" hreflang="es" lang="es">Español</a></nav>
+<div class="top">
+<div class="photo">
+<img alt="Christian D. Castaño-Bonilla" onerror="this.remove()" src="headshot.jpeg"/>
+<span aria-hidden="true">CCB</span>
+</div>
+<div>
+<h1>Christian D. Castaño-Bonilla</h1>
+<p class="position">
+<span>Research Analyst, Development Impact Group</span>
+<span>Research Coordinator, Gender Innovation Lab</span>
+<span>The World Bank</span>
+</p>
 
-  <div class="langbar" role="group" aria-label="Language / Idioma">
-    <button type="button" id="btn-en" data-set-lang="en" aria-pressed="true">English</button>
-    <span aria-hidden="true">|</span>
-    <button type="button" id="btn-es" data-set-lang="es" aria-pressed="false">Español</button>
-  </div>
-
-  <div class="top">
-    <!-- Your photo: save a square picture as headshot.jpg next to this file. Until then the initials show. -->
-    <div class="photo">
-      <img src="headshot.jpeg" alt="Christian D. Castaño-Bonilla" onerror="this.remove()">
-      <span aria-hidden="true">CCB</span>
-    </div>
-    <div>
-      <h1>Christian D. Castaño-Bonilla</h1>
-      <p class="position" lang="en">
-        <span>Research Analyst, Development Impact Group</span>
-        <span>Research Coordinator, Gender Innovation Lab</span>
-        <span>The World Bank</span>
-      </p>
-      <p class="position" lang="es">
-        <span>Analista de Investigación, Grupo de Impacto en el Desarrollo</span>
-        <span>Coordinador de Investigación, Laboratorio de Innovación de Género</span>
-        <span>Banco Mundial</span>
-      </p>
-      <p class="contact">
-    <a href="cv.pdf">CV</a><a href="https://scholar.google.com/citations?user=UDIH8EgAAAAJ&amp;hl=en">Google Scholar</a><a href="https://www.linkedin.com/in/cdcastano">LinkedIn</a><a id="email" href="#">ccastanobonilla [at] worldbank.org</a> <script>   (function () {     var u = "ccastanobonilla", d = "worldbank.org", a = document.getElementById("email");     a.href = "mailto:" + u + "@" + d;     a.textContent = u + "@" + d;   })(); </script>
-      </p>
-    </div>
-  </div>
-
-  <div lang="en">
-    <p>I am a researcher in economics and political economy. My interests include public economics, development, public policy, governance, and gender.</p>
-    <p>At the World Bank I work in the <a href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation">Development Impact Group</a>, building global datasets of trade data with non-tariff measures, which have been featured in the <a href="https://www.worldbank.org/en/publication/wdr2025">World Development Report</a> and the <a href="https://open.spotify.com/episode/4JaEopePpFc1foUU8rEr0v?si=x37pDZquS7mCm2nRX5N1ug&utm_source=copy-link">Accelerating Development: Ideas for Impact</a> podcast. I also work on the <a href="https://magnet.ifpri.info/">MAGNET initiative</a> of the <a href="https://www.worldbank.org/en/programs/africa-gender-innovation-lab">Africa Gender Innovation Lab</a>, which develops survey tools to measure women’s empowerment; our tools have been picked up by partners such as LSMS, IFPRI, GALLUP, Latinobarómetro, and Afrobarometer, among others. Before that I was a research assistant in development economics at the <a href="https://web.ub.edu/en/web/departament-economia">Universitat de Barcelona</a> and a research fellow at the <a href="https://www.ra-un.org/">Regional Academy on the United Nations</a>, working with UNODC.</p>
-    <p>I hold an MS in Institutions and Political Economy from the Universitat de Barcelona, where I serve as a <a href="https://www.ub.edu/mipe/ambassadors#:~:text=Christian%20Casta%C3%B1o%20Bonilla">program ambassador</a>, and an MPP in Government and Public Policy from Universidad Icesi.</p>
-    <p>I have lived in Colombia, the Netherlands, Japan, Thailand, Italy, the United States, and Spain.</p>
-  </div>
-  <div lang="es">
-    <p>Soy investigador en economía y economía política. Mis intereses incluyen la economía pública, el desarrollo, las políticas públicas, la gobernanza y temas de género.</p>
-    <p>En el Banco Mundial trabajo en el <a href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation">Grupo de Impacto en el Desarrollo</a>, construyendo bases de datos globales de comercio internacional con medidas no arancelarias, que han aparecido en el <a href="https://www.worldbank.org/en/publication/wdr2025">Informe sobre el desarrollo mundial</a> y el podcast <a href="https://open.spotify.com/episode/4JaEopePpFc1foUU8rEr0v?si=x37pDZquS7mCm2nRX5N1ug&utm_source=copy-link">Accelerating Development: Ideas for Impact</a>. También trabajo en la <a href="https://magnet.ifpri.info/">iniciativa MAGNET</a> del <a href="https://www.worldbank.org/en/programs/africa-gender-innovation-lab">Laboratorio de Innovación de Género para África</a>, que desarrolla herramientas de encuesta para medir el empoderamiento de las mujeres; nuestras herramientas han sido adoptadas por socios como LSMS, IFPRI, GALLUP, Latinobarómetro y Afrobarometer, entre otros. Antes de eso, fui asistente de investigación en economía del desarrollo en la <a href="https://web.ub.edu/en/web/departament-economia">Universitat de Barcelona</a> e investigador en la <a href="https://www.ra-un.org/">Academia Regional de las Naciones Unidas</a>, en colaboración con la UNODC.</p>
-    <p>Tengo una maestría en Instituciones y Economía Política de la Universitat de Barcelona, donde soy <a href="https://www.ub.edu/mipe/ambassadors#:~:text=Christian%20Casta%C3%B1o%20Bonilla">embajador del programa</a>, y una maestría en Gobierno y Políticas Públicas de la Universidad Icesi.</p>
-    <p>He vivido en Colombia, los Países Bajos, Japón, Tailandia, Italia, Estados Unidos y España.</p>
-  </div>
-
-  <img class="map" src="map.svg" alt="World map marking Cali, Wageningen, Yokohama, Bangkok, Rome, Seattle, Iowa City and Barcelona" width="720" height="330">
-
-
-  <h2><span lang="en">News</span><span lang="es">Noticias</span></h2>
-  <ul class="news">
-    <li>
-      <span class="date"><span lang="en">Sep 2026</span><span lang="es">sep. 2026</span></span>
-      <span lang="en">Published a co-authored policy brief, <a href="https://magnet.ifpri.info/files/2026/09/WB_MAGNET-Policy-Brief_V4.pdf">New MAGNET Tools for Measuring Women’s Agency</a>. <a href="https://magnet.ifpri.info/2026/09/28/new-policy-brief-new-magnet-tools-for-measuring-womens-agency/">Announcement</a> · <a href="https://www.ifpri.org/event/measuring-womens-agency-new-tools-takeaways-and-what-comes-next/">Event recording</a></span>
-      <span lang="es">Se publicó el informe de políticas <a href="https://magnet.ifpri.info/files/2026/09/WB_MAGNET-Policy-Brief_V4.pdf">New MAGNET Tools for Measuring Women’s Agency</a>, del que soy coautor. <a href="https://magnet.ifpri.info/2026/09/28/new-policy-brief-new-magnet-tools-for-measuring-womens-agency/">Anuncio</a> · <a href="https://www.ifpri.org/event/measuring-womens-agency-new-tools-takeaways-and-what-comes-next/">Grabación del evento</a></span>
-    </li>
-    <li>
-      <span class="date"><span lang="en">Apr 2026</span><span lang="es">abr. 2026</span></span>
-      <span lang="en">Data on non-tariff measures that I built was featured in episode 34 of the <a href="https://open.spotify.com/show/0l6W3sh3vKF14cEgk4nQ7x">Accelerating Development: Ideas for Impact</a> podcast, “<a href="https://open.spotify.com/episode/4JaEopePpFc1foUU8rEr0v">Can Standards Make—or Break—Firms and Services?</a>”</span>
-      <span lang="es">Los datos sobre medidas no arancelarias que construí aparecieron en el episodio 34 del podcast <a href="https://open.spotify.com/show/0l6W3sh3vKF14cEgk4nQ7x">Accelerating Development: Ideas for Impact</a>, “<a href="https://open.spotify.com/episode/4JaEopePpFc1foUU8rEr0v">Can Standards Make—or Break—Firms and Services?</a>”</span>
-    </li>
-    <li>
-      <span class="date"><span lang="en">Dec 2025</span><span lang="es">dic. 2025</span></span>
-      <span lang="en">Data on non-tariff measures that I built was included in the <a href="https://www.worldbank.org/en/publication/wdr2025">World Development Report 2025: Standards for Development</a> and highlighted in its Overview.</span>
-      <span lang="es">Los datos sobre medidas no arancelarias que construí se incluyeron en el <a href="https://www.worldbank.org/en/publication/wdr2025">Informe Sobre el Desarrollo Mundial 2025 : Normas para el Desarrollo</a> del Banco Mundial y se destacaron en su resumen.</span>
-    </li>
-  </ul>
-  <details class="more">
-    <summary><span lang="en">Older news</span><span lang="es">Noticias anteriores</span></summary>
-    <ul class="news">
-      <li>
-        <span class="date"><span lang="en">Jun 2024</span><span lang="es">jun. 2024</span></span>
-        <span lang="en">The <a href="https://lnkd.in/p/e5dbbBU4">MAGNET Virtual Resource Center</a> launched. I wrote the site content, programmed the CAPI surveys, and drafted the enumerator manuals, tool content and statistical annexes.</span>
-        <span lang="es">Se lanzó el <a href="https://lnkd.in/p/e5dbbBU4">Centro Virtual de Recursos de MAGNET</a>. Redacté el contenido del sitio, programé las encuestas CAPI y elaboré los manuales para encuestadores, el contenido de las herramientas y los anexos estadísticos.</span>
-      </li>
-      <li>
-        <span class="date"><span lang="en">Jul 2023</span><span lang="es">jul. 2023</span></span>
-        <span lang="en">I became an <a href="https://www.ub.edu/mipe/ambassadors#:~:text=Christian%20Casta%C3%B1o%20Bonilla">ambassador</a> for the MS in Institutions and Political Economy at the Universitat de Barcelona.</span>
-        <span lang="es">Fui nombrado <a href="https://www.ub.edu/mipe/ambassadors#:~:text=Christian%20Casta%C3%B1o%20Bonilla">embajador</a> de la Maestría en Instituciones y Economía Política de la Universitat de Barcelona.</span>
-      </li>
-      <li>
-        <span class="date"><span lang="en">Jan 2023</span><span lang="es">ene. 2023</span></span>
-        <span lang="en">With Alejandra Cervantes Nieto, I <a href="https://www.linkedin.com/posts/cdcastano_corruption-innovation-share-7022967609503494144-tjkX">presented our research</a> on corruption in drug treatment systems and recommendations for the UNODC at the United Nations headquarters in Vienna, as part of the Regional Academy on the United Nations.</span>
-        <span lang="es">Junto con Alejandra Cervantes Nieto, <a href="https://www.linkedin.com/posts/cdcastano_corruption-innovation-share-7022967609503494144-tjkX">presenté nuestra investigación</a> sobre la corrupción en los sistemas de tratamiento de drogas y nuestras recomendaciones para la UNODC en la sede de las Naciones Unidas en Viena, como parte de la Academia Regional de las Naciones Unidas.</span>
-      </li>
-    </ul>
-  </details>
-  <h2><span lang="en">Research</span><span lang="es">Investigación</span></h2>
-
-  <h3><span lang="en">Working Papers</span><span lang="es">Documentos de trabajo</span></h3>
-  <ul class="papers">
-    <li>
-      <span class="title">Beyond Tariffs: Evidence from the Global Panel of Non-Tariff Measures</span>
-      <span class="coauth"><span lang="en">with</span><span lang="es">con</span> Lucas Zavala</span>
-    </li>
-    <li>
-      <span class="title">The Role of Enumerators’ Views on Gender in Shaping Respondents’ Answers</span>
-      <span class="coauth"><span lang="en">with</span><span lang="es">con</span> Cheryl R. Doss <span lang="en">and</span><span lang="es">y</span> María Hernández-de-Benito</span>
-    </li>
-    <li>
-      <span class="title">Measuring Implicit Bias Toward Gender-Incongruent Occupations in Uganda and India</span>
-      <span class="coauth"><span lang="en">with</span><span lang="es">con</span> Aletheia Donald, Manisha Jain <span lang="en">and</span><span lang="es">y</span> Anita Raj</span>
-    </li>
-    <li>
-      <a class="title" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4546308">Transparency and Governance in Drug Treatment Systems: A Comparative Framework</a>
-      <span class="coauth"><span lang="en">with</span><span lang="es">con</span> Alejandra Cervantes Nieto</span>
-      <span class="venue"><span lang="en">SSRN Working Paper 4546308</span><span lang="es">Documento de trabajo SSRN 4546308</span></span>
-    </li>
-  </ul>
-
-  <h3><span lang="en">Other Writing</span><span lang="es">Otros escritos</span></h3>
-  <ul class="papers">
-    <li>
-      <span class="title">Casos de éxito de iniciativas anticorrupción: un balance y lecciones para el caso colombiano</span>
-      <span class="venue"><span lang="en">MPP thesis, Universidad Icesi, 2025</span><span lang="es">Tesis de maestría, Universidad Icesi, 2025</span></span>
-    </li>
-    <li>
-      <span class="title">Exploring the Link Between Corruption and State Capacity: A Case Study of Brazilian Municipalities</span>
-      <span class="venue"><span lang="en">MS thesis, Universitat de Barcelona, 2023</span><span lang="es">Tesis de maestría, Universitat de Barcelona, 2023</span></span>
-    </li>
-    <li>
-      <span class="title">Corruption in Drug Treatment Systems: Innovation Against Corrupt Practices</span>
-      <span class="coauth"><span lang="en">with</span><span lang="es">con</span> Alejandra Cervantes Nieto</span>
-      <span class="venue"><span lang="en">Regional Academy on the United Nations, 2023</span><span lang="es">Academia Regional de las Naciones Unidas, 2023</span></span>
-    </li>
-  </ul>
-
-  <h3><span lang="en">Presentations</span><span lang="es">Presentaciones</span></h3>
-  <ul class="plain">
-    <li>London School of Economics, INET Corruption and Conflicts of Interest in Healthcare, 2024</li>
-    <li>Universitat de Barcelona, Interdisciplinary Corruption Research Forum, 2023</li>
-    <li lang="en">United Nations, Vienna International Centre, Regional Academy on the United Nations, 2023</li>
-    <li lang="es">Naciones Unidas, Centro Internacional de Viena, Academia Regional de las Naciones Unidas, 2023</li>
-  </ul>
-
-  <footer>
-    <span lang="en">Views expressed here are my own and do not represent the World Bank.</span>
-    <span lang="es">Las opiniones expresadas aquí son personales y no representan al Banco Mundial.</span>
-  </footer>
+<p class="contact">
+<a href="cv.pdf">CV</a><a href="https://scholar.google.com/citations?user=UDIH8EgAAAAJ&amp;hl=en">Google Scholar</a><a href="https://www.linkedin.com/in/cdcastano">LinkedIn</a><a href="#" id="email">ccastanobonilla [at] worldbank.org</a> <script>   (function () {     var u = "ccastanobonilla", d = "worldbank.org", a = document.getElementById("email");     a.href = "mailto:" + u + "@" + d;     a.textContent = u + "@" + d;   })(); </script>
+</p>
+</div>
+</div>
+<div>
+<p>I am a researcher in economics and political economy. My interests include public economics, development, public policy, governance, and gender.</p>
+<p>At the World Bank I work in the <a href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation">Development Impact Group</a>, building global datasets of trade data with non-tariff measures, which have been featured in the <a href="https://www.worldbank.org/en/publication/wdr2025">World Development Report</a> and the <a href="https://open.spotify.com/episode/4JaEopePpFc1foUU8rEr0v?si=x37pDZquS7mCm2nRX5N1ug&amp;utm_source=copy-link">Accelerating Development: Ideas for Impact</a> podcast. I also work on the <a href="https://magnet.ifpri.info/">MAGNET initiative</a> of the <a href="https://www.worldbank.org/en/programs/africa-gender-innovation-lab">Africa Gender Innovation Lab</a>, which develops survey tools to measure women’s empowerment; our tools have been picked up by partners such as LSMS, IFPRI, GALLUP, Latinobarómetro, and Afrobarometer, among others. Before that I was a research assistant in development economics at the <a href="https://web.ub.edu/en/web/departament-economia">Universitat de Barcelona</a> and a research fellow at the <a href="https://www.ra-un.org/">Regional Academy on the United Nations</a>, working with UNODC.</p>
+<p>I hold an MS in Institutions and Political Economy from the Universitat de Barcelona, where I serve as a <a href="https://www.ub.edu/mipe/ambassadors#:~:text=Christian%20Casta%C3%B1o%20Bonilla">program ambassador</a>, and an MPP in Government and Public Policy from Universidad Icesi.</p>
+<p>I have lived in Colombia, the Netherlands, Japan, Thailand, Italy, the United States, and Spain.</p>
 </div>
 
-<script>
-(function () {
-  var root = document.documentElement;
-  function setLang(lang, remember) {
-    root.lang = lang;
-        document.title = "Christian D. Castaño-Bonilla | Political Economist";
-    document.getElementById("btn-en").setAttribute("aria-pressed", lang === "en");
-    document.getElementById("btn-es").setAttribute("aria-pressed", lang === "es");
-    if (remember) { try { localStorage.setItem("lang", lang); } catch (e) {} }
-    if (remember) { try { history.replaceState(null, "", lang === "es" ? "#es" : location.pathname); } catch (e) {} }
-  }
-  // Start language: #es in the link, then the visitor's last choice, then English
-  var start = "en";
-  if (location.hash === "#es") { start = "es"; }
-  else { try { if (localStorage.getItem("lang") === "es") start = "es"; } catch (e) {} }
-  setLang(start, false);
-  document.querySelectorAll("[data-set-lang]").forEach(function (b) {
-    b.addEventListener("click", function () { setLang(b.getAttribute("data-set-lang"), true); });
-  });
-  window.addEventListener("hashchange", function () { setLang(location.hash === "#es" ? "es" : "en", false); });
-})();
-</script>
+<img alt="World map marking Cali, Wageningen, Yokohama, Bangkok, Rome, Seattle, Iowa City and Barcelona" class="map" height="330" src="map.svg" width="720"/>
+<h2>News</h2>
+<ul class="news">
+<li>
+<span class="date">Sep 2026</span>
+Published a co-authored policy brief, <a href="https://magnet.ifpri.info/files/2026/09/WB_MAGNET-Policy-Brief_V4.pdf">New MAGNET Tools for Measuring Women’s Agency</a>. <a href="https://magnet.ifpri.info/2026/09/28/new-policy-brief-new-magnet-tools-for-measuring-womens-agency/">Announcement</a> · <a href="https://www.ifpri.org/event/measuring-womens-agency-new-tools-takeaways-and-what-comes-next/">Event recording</a>
+
+</li>
+<li>
+<span class="date">Apr 2026</span>
+Data on non-tariff measures that I built was featured in episode 34 of the <a href="https://open.spotify.com/show/0l6W3sh3vKF14cEgk4nQ7x">Accelerating Development: Ideas for Impact</a> podcast, “<a href="https://open.spotify.com/episode/4JaEopePpFc1foUU8rEr0v">Can Standards Make—or Break—Firms and Services?</a>”
+
+</li>
+<li>
+<span class="date">Dec 2025</span>
+Data on non-tariff measures that I built was included in the <a href="https://www.worldbank.org/en/publication/wdr2025">World Development Report 2025: Standards for Development</a> and highlighted in its Overview.
+
+</li>
+</ul>
+<details class="more">
+<summary>Older news</summary>
+<ul class="news">
+<li>
+<span class="date">Jun 2024</span>
+The <a href="https://lnkd.in/p/e5dbbBU4">MAGNET Virtual Resource Center</a> launched. I wrote the site content, programmed the CAPI surveys, and drafted the enumerator manuals, tool content and statistical annexes.
+
+</li>
+<li>
+<span class="date">Jul 2023</span>
+I became an <a href="https://www.ub.edu/mipe/ambassadors#:~:text=Christian%20Casta%C3%B1o%20Bonilla">ambassador</a> for the MS in Institutions and Political Economy at the Universitat de Barcelona.
+
+</li>
+<li>
+<span class="date">Jan 2023</span>
+With Alejandra Cervantes Nieto, I <a href="https://www.linkedin.com/posts/cdcastano_corruption-innovation-share-7022967609503494144-tjkX">presented our research</a> on corruption in drug treatment systems and recommendations for the UNODC at the United Nations headquarters in Vienna, as part of the Regional Academy on the United Nations.
+
+</li>
+</ul>
+</details>
+<h2>Research</h2>
+<h3>Working Papers</h3>
+<ul class="papers">
+<li>
+<span class="title">Beyond Tariffs: Evidence from the Global Panel of Non-Tariff Measures</span>
+<span class="coauth">with Lucas Zavala</span>
+</li>
+<li>
+<span class="title">The Role of Enumerators’ Views on Gender in Shaping Respondents’ Answers</span>
+<span class="coauth">with Cheryl R. Doss and María Hernández-de-Benito</span>
+</li>
+<li>
+<span class="title">Measuring Implicit Bias Toward Gender-Incongruent Occupations in Uganda and India</span>
+<span class="coauth">with Aletheia Donald, Manisha Jain and Anita Raj</span>
+</li>
+<li>
+<a class="title" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4546308">Transparency and Governance in Drug Treatment Systems: A Comparative Framework</a>
+<span class="coauth">with Alejandra Cervantes Nieto</span>
+<span class="venue">SSRN Working Paper 4546308</span>
+</li>
+</ul>
+<h3>Other Writing</h3>
+<ul class="papers">
+<li>
+<span class="title">Casos de éxito de iniciativas anticorrupción: un balance y lecciones para el caso colombiano</span>
+<span class="venue">MPP thesis, Universidad Icesi, 2025</span>
+</li>
+<li>
+<span class="title">Exploring the Link Between Corruption and State Capacity: A Case Study of Brazilian Municipalities</span>
+<span class="venue">MS thesis, Universitat de Barcelona, 2023</span>
+</li>
+<li>
+<span class="title">Corruption in Drug Treatment Systems: Innovation Against Corrupt Practices</span>
+<span class="coauth">with Alejandra Cervantes Nieto</span>
+<span class="venue">Regional Academy on the United Nations, 2023</span>
+</li>
+</ul>
+<h3>Presentations</h3>
+<ul class="plain">
+<li>London School of Economics, INET Corruption and Conflicts of Interest in Healthcare, 2024</li>
+<li>Universitat de Barcelona, Interdisciplinary Corruption Research Forum, 2023</li>
+<li>United Nations, Vienna International Centre, Regional Academy on the United Nations, 2023</li>
+
+</ul>
+<footer>
+Views expressed here are my own and do not represent the World Bank.
+
+</footer>
+</div>
+<script>if (location.hash === "#es") { location.replace("/es/"); }</script>
 </body>
 </html>
