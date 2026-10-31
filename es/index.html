@@ -305,33 +305,6 @@ Junto con Alejandra Cervantes Nieto, <a href="https://www.linkedin.com/posts/cdc
     <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">NLP</span><span>Texto como datos<span class="kind">PLN</span></span></span><p>Bases de datos de medidas no arancelarias construidas a partir de textos legales, análisis comparado de legislación sobre drogas y análisis de sentimiento sobre las actitudes hacia la desigualdad de género y las políticas de bienestar social.</p></li>
     <li class="tool"><span class="tname"><span class="badge" aria-hidden="true">ML</span><span>Aprendizaje automático<span class="kind">Inferencia causal</span></span></span><p>Bosques causales para estimar efectos heterogéneos de tratamiento en ensayos aleatorizados.</p></li>
 </ul>
-<h3>En la práctica</h3>
-<div class="code">
-  <div class="tabs" role="tablist" aria-label="Ejemplos de código">
-    <button type="button" role="tab" id="tab-stata" aria-controls="pane-stata" aria-selected="true">Stata</button>
-    <button type="button" role="tab" id="tab-r" aria-controls="pane-r" aria-selected="false">R</button>
-    <button type="button" role="tab" id="tab-rmd" aria-controls="pane-rmd" aria-selected="false">R Markdown</button>
-  </div>
-  <div role="tabpanel" id="pane-stata" aria-labelledby="tab-stata"><pre><span class="c">* Does the agency scale measure one construct?</span>
-<span class="k">alpha</span> agency_q1-agency_q8, item std
-<span class="k">factor</span> agency_q1-agency_q8, pcf
-
-<span class="c">* Treatment effect with village fixed effects</span>
-<span class="k">reghdfe</span> empowerment treated, absorb(village) vce(cluster village)</pre><span class="cap">Comprobar si una escala de agencia mide una sola dimensión y luego estimar un efecto de tratamiento.</span></div>
-  <div role="tabpanel" id="pane-r" aria-labelledby="tab-r" hidden><pre><span class="k">library</span>(data.table)
-
-ntm &lt;- <span class="k">fread</span>(<span class="s">"ntm_panel.csv"</span>)
-shares &lt;- ntm[, .(share_affected = <span class="k">mean</span>(any_ntm)),
-              by = .(reporter, year)]</pre><span class="cap">Resumir un panel de comercio en la proporción de observaciones afectadas por medidas no arancelarias.</span></div>
-  <div role="tabpanel" id="pane-rmd" aria-labelledby="tab-rmd" hidden><pre>---
-title: <span class="s">"Case Study: Australia"</span>
-output:
-  html_document:
-    toc: <span class="k">true</span>
-    toc_float: <span class="k">true</span>
-    code_folding: hide
----</pre><span class="cap">El encabezado de un estudio de caso por país, con la misma tabla de contenidos flotante de esta página.</span></div>
-</div>
 <h3>Idiomas</h3>
 <ul class="langs">
     <li><strong>Español</strong><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="lvl">Nativo</span><span class="hi" lang="es">Hola</span></li>
