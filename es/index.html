@@ -178,9 +178,20 @@ h2, h3, .top { scroll-margin-top: 24px; }
 .langs .lvl { font-size: 15px; color: var(--muted); }
 .langs .hi { font-style: italic; color: #444; }
 @media (max-width: 480px) { .langs li { grid-template-columns: 80px 100px 1fr; gap: 10px; } .langs .hi { display: none; } }
+  
+/* ---------- Mobile reading progress: one bar per section ---------- */
+.progress { display: none; }
+@media (max-width: 960px) {
+  body { padding-top: 14px; }
+  .progress { display: flex; gap: 4px; position: fixed; top: 0; left: 0; right: 0; z-index: 10; height: 14px; padding: 5px 20px; background: var(--bg); }
+  .progress a { flex: 1; position: relative; border-radius: 2px; background: #e3e8ef; overflow: hidden; }
+  .progress a span { position: absolute; inset: 0; width: 0; background: var(--link); transition: width .15s linear; }
+}
+@media (max-width: 960px) and (prefers-reduced-motion: reduce) { .progress a span { transition: none; } }
 </style>
 </head>
 <body>
+<nav class="progress" aria-label="Progreso de lectura"><a href="#about" aria-label="Sobre mí"><span></span></a><a href="#news" aria-label="Noticias"><span></span></a><a href="#research" aria-label="Investigación"><span></span></a><a href="#skills" aria-label="Habilidades"><span></span></a></nav>
 <div class="layout">
 <nav class="toc" aria-label="Contenido"><a href="#about">Sobre mí</a><a href="#news">Noticias</a><a href="#research">Investigación</a><a href="#working-papers" class="sub">Documentos de trabajo</a><a href="#other-writing" class="sub">Otros escritos</a><a href="#presentations" class="sub">Presentaciones</a><a href="#skills">Habilidades</a></nav>
 <div class="wrap">
@@ -344,5 +355,28 @@ Las opiniones expresadas aquí son personales y no representan al Banco Mundial.
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6a27438ed4c647539332671d2434dbbd"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+(function () {
+  // Mobile reading progress: each bar fills as you read its section
+  var bars = Array.prototype.slice.call(document.querySelectorAll('.progress a'));
+  if (!bars.length) return;
+  var secs = bars.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+  function top(el) { return el.getBoundingClientRect().top + window.scrollY; }
+  function update() {
+    var y = window.scrollY + window.innerHeight * 0.35;
+    var atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+    secs.forEach(function (el, i) {
+      if (!el) return;
+      var start = i === 0 ? 0 : top(el);
+      var end = i < secs.length - 1 ? top(secs[i + 1]) : document.documentElement.scrollHeight;
+      var p = atEnd ? 1 : Math.min(1, Math.max(0, (y - start) / (end - start)));
+      bars[i].firstChild.style.width = (p * 100) + '%';
+    });
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body>
 </html>
